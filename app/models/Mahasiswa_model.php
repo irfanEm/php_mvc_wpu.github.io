@@ -22,8 +22,7 @@ class Mahasiswa_model {
 
     public function tambahDataMahasiswa($data)
     {
-        $query = "INSERT INTO mahasiswa 
-                    VALUES 
+        $query = "INSERT INTO " . $this->table . " VALUES 
                   (null, :nama, :nrp, :email, :jurusan)";
         $this->db->query($query);
         $this->db->bind('nama', $data['nama']);
